@@ -26,6 +26,11 @@ void run_command(const char** commands, int size){
 		if (size==1) chdir(home);
 		else chdir(arg);
 	} 
+
+  else if(strcmp(commands[0], "quit") == 0){
+     exit(1);
+  }
+
   else {
      pid_t  pid; int    status;
      char *cmdExec = commands[0];
