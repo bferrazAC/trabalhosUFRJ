@@ -19,7 +19,10 @@
 void run_bg_command (const char** commands, int size){
 	printf("lul");
 }
+
+
 void run_command(const char** commands, int size){
+  //função cd
 	if (strcmp(commands[0], "cd") == 0){
 		char * home = getenv("HOME");
 		const char *arg = commands[1];
@@ -27,10 +30,13 @@ void run_command(const char** commands, int size){
 		else chdir(arg);
 	} 
 
+  //função quit 
   else if(strcmp(commands[0], "quit") == 0){
      exit(1);
   }
+  // else if(strcmp(commands[0], "dir") == 0)
 
+  //todas as outras funções, incluindo dir e pwd
   else {
      pid_t  pid; int    status;
      char *cmdExec = commands[0];
